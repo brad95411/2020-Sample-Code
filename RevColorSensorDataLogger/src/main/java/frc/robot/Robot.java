@@ -99,7 +99,7 @@ public class Robot extends TimedRobot {
 
     startButton = new NetworkButton(TABNAME, "Start Button");
     Shuffleboard.getTab(TABNAME)
-      .add(TABNAME, "Start Button")
+      .add(startButton, "Start Button")
       .getEntry().addListener((en) -> {
         if(!sampling) {
           sampling = en.getEntry().getBoolean(false);

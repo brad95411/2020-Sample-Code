@@ -5,6 +5,7 @@ import com.revrobotics.ColorMatch;
 import com.revrobotics.ColorMatchResult;
 import com.revrobotics.ColorSensorV3;
 
+import edu.wpi.first.wpilibj.I2C;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.util.Color;
@@ -32,6 +33,8 @@ public class Robot extends TimedRobot {
 
   @Override
   public void robotInit() {
+    colorSensor = new ColorSensorV3(I2C.Port.kOnboard);
+
     //Setup the REV Color Matcher with the REV targets we specified above
     revMatcher = new ColorMatch();
     revMatcher.addColorMatch(REVBLUETARGET);
