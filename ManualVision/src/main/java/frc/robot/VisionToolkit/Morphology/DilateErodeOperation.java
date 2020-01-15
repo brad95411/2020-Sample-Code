@@ -21,20 +21,16 @@ public class DilateErodeOperation extends Operation {
 
     private Mat element;
 
-    public static final int DEFAULTKERNELSIZE = 1;
-    public static final int DEFAULTKERNELSIZEMIN = 1;
-    public static final int DEFAULTKERNELSIZEMAX = 50;
-    public static final PixelFormat DEFAULTDILATEERODEPIXELFORMAT = PixelFormat.kBGR;
+    private static final int DEFAULTKERNELSIZE = 1;
+    private static final int DEFAULTKERNELSIZEMIN = 1;
+    private static final int DEFAULTKERNELSIZEMAX = 50;
+    private static final PixelFormat DEFAULTDILATEERODEPIXELFORMAT = PixelFormat.kBGR;
 
     public DilateErodeOperation(String operationName, int width, int height) {
-        this(operationName, DEFAULTDILATEERODEPIXELFORMAT, width, height, DEFAULTKERNELSIZE, DEFAULTKERNELSIZEMIN, 
-            DEFAULTKERNELSIZEMAX);
+        super(operationName, DEFAULTDILATEERODEPIXELFORMAT, width, height);     
     }
 
-    public DilateErodeOperation(String operationName, PixelFormat outputFormat, int width, int height, int defaultKernel, 
-        int minKernel, int maxKernel) {
-        super(operationName, outputFormat, width, height);
-
+    protected void buildShuffleboardUI() {
         dilateOrErode = new SendableChooser<String>();
         dilateOrErode.setDefaultOption("Dilate", "Dilate");
         dilateOrErode.addOption("Erode", "Erode");
@@ -56,12 +52,12 @@ public class DilateErodeOperation extends Operation {
 
         operationTab.add(operationName + " Kernel Size", kernel)
             .withWidget(BuiltInWidgets.kNumberSlider)
-            .withProperties(Map.of("min", minKernel, "max", maxKernel))
+            .withProperties(Map.of("min", DEFAULTKERNELSIZEMIN, "max", DEFAULTKERNELSIZEMAX))
             .getEntry()
             .addListener((e) -> {
                 kernel = e.getEntry().getDouble(DEFAULTKERNELSIZE);
             }, EntryListenerFlags.kUpdate);
-            
+          
     }
 
     public void performOperation(Mat src, Mat dst) {

@@ -31,9 +31,12 @@ public abstract class Operation {
         
         operationTab.add(operationName, SendableCameraWrapper.wrap(server.getSource()))
             .withWidget(BuiltInWidgets.kCameraStream);
+
+        buildShuffleboardUI();
     }
 
     public abstract void performOperation(Mat src, Mat dst);
+    protected abstract void buildShuffleboardUI();
 
     protected void visualize(Mat toVisualize) {
         source.putFrame(toVisualize);
