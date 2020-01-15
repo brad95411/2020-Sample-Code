@@ -10,18 +10,28 @@ import org.opencv.imgproc.Imgproc;
 import edu.wpi.cscore.VideoMode.PixelFormat;
 import edu.wpi.first.networktables.EntryListenerFlags;
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
-import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 
 public class BoxBlurOperation extends Operation {
 
-    private double blurKernel;
+    private Double blurKernel;
+
+    public static final int DEFAULTSTARTINGBLUR = 1;
+    public static final int DEFAULTBLURSLIDERMIN = 1;
+    public static final int DEFAULTBLURSLIDERMAX = 100;
+    public static final PixelFormat DEFAULTBLUROUTPUTFORMAT = PixelFormat.kBGR;
+
+    public BoxBlurOperation(String operationName, int width, int height) {
+        this(operationName, DEFAULTBLUROUTPUTFORMAT, width, height, DEFAULTSTARTINGBLUR, 
+            DEFAULTBLURSLIDERMIN, DEFAULTBLURSLIDERMAX);
+    }
 
     public BoxBlurOperation(String operationName, PixelFormat outputFormat, int width, int height, int defaultValue, 
         int sliderLow, int sliderHigh) {
         super(operationName, outputFormat, width, height);
 
-        Shuffleboard.getTab(operationName)
-            .add(operationName, defaultValue)
+        blurKernel = Double.valueOf(defaultValue);
+
+        operationTab.add(operationName + " Kernel Size", defaultValue)
             .withWidget(BuiltInWidgets.kNumberSlider)
             .withProperties(Map.of("min", sliderLow, "max", sliderHigh))
             .getEntry()

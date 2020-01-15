@@ -23,7 +23,7 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     cameraServer = CameraServer.getInstance();
-    sourceCamera = cameraServer.startAutomaticCapture(1);
+    sourceCamera = cameraServer.startAutomaticCapture(0);
 
     //pipeline = new ExperimentationPipeline("Exp Pipeline Output", sourceCamera.getVideoMode().width, sourceCamera.getVideoMode().height);
     pipeline = new VisionToolkitTestPipeline(sourceCamera.getVideoMode().width, sourceCamera.getVideoMode().height);

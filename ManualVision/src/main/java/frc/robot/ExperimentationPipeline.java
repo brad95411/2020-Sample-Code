@@ -1,6 +1,5 @@
 package frc.robot;
 
-import java.security.KeyStore.Entry;
 import java.util.Map;
 
 import org.opencv.core.Core;
@@ -10,7 +9,6 @@ import org.opencv.core.Scalar;
 import org.opencv.core.Size;
 import org.opencv.imgproc.Imgproc;
 
-import edu.wpi.cscore.CvSink;
 import edu.wpi.cscore.CvSource;
 import edu.wpi.cscore.MjpegServer;
 import edu.wpi.cscore.VideoMode;
@@ -20,7 +18,6 @@ import edu.wpi.first.networktables.EntryListenerFlags;
 import edu.wpi.first.vision.VisionPipeline;
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
-import edu.wpi.first.wpilibj.shuffleboard.SuppliedValueWidget;
 
 public class ExperimentationPipeline implements VisionPipeline {
 
