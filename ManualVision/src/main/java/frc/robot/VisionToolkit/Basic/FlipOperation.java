@@ -2,7 +2,6 @@ package frc.robot.VisionToolkit.Basic;
 
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
-import org.opencv.imgproc.Imgproc;
 
 import edu.wpi.cscore.VideoMode.PixelFormat;
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
@@ -29,6 +28,8 @@ public class FlipOperation extends Operation {
                 Core.flip(src, dst, -1);
                 break;
             case "No Flip":
+            default:
+                src.copyTo(dst);
                 break;
         }
 
