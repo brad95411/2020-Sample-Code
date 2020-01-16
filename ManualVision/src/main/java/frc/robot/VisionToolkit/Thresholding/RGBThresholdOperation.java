@@ -32,8 +32,8 @@ public class RGBThresholdOperation extends Operation {
 
     @Override
     public void performOperation(Mat src, Mat dst) {
-        Core.inRange(src, new Scalar(redMin, greenMin, blueMin), 
-            new Scalar(redMax, greenMax, blueMax), dst);
+        Core.inRange(src, new Scalar(blueMin, greenMin, redMin), 
+            new Scalar(blueMax, greenMax, redMax), dst);
 
         visualize(dst);
     }
