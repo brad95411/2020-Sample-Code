@@ -2,11 +2,10 @@ package frc.robot;
 
 import org.opencv.core.Mat;
 
-import edu.wpi.cscore.VideoMode.PixelFormat;
 import edu.wpi.first.vision.VisionPipeline;
-import frc.robot.VisionToolkit.BoxBlurOperation;
-import frc.robot.VisionToolkit.DilateErodeOperation;
-import frc.robot.VisionToolkit.DisplayOperation;
+import frc.robot.VisionToolkit.Basic.BoxBlurOperation;
+import frc.robot.VisionToolkit.Basic.DisplayOperation;
+import frc.robot.VisionToolkit.Morphology.DilateErodeOperation;
 
 public class VisionToolkitTestPipeline implements VisionPipeline {
     private DisplayOperation displaySource;
@@ -15,7 +14,7 @@ public class VisionToolkitTestPipeline implements VisionPipeline {
     private Mat blurResult, dilateErodeResult;
 
     public VisionToolkitTestPipeline(int width, int height) {
-        displaySource = new DisplayOperation("Source", PixelFormat.kBGR, width, height);
+        displaySource = new DisplayOperation("Source", width, height);
         boxBlurOperation = new BoxBlurOperation("Box Blur Test", width, height);
         dilateErodeOperation = new DilateErodeOperation("DilateErode Test", width, height);
         blurResult = new Mat();
