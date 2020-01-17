@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import frc.robot.VisionToolkit.Operation;
 
-public class FlipOperation extends Operation {
+public class FlipOperation extends Operation<Mat, Mat> {
     private SendableChooser<String> flipType;
 
     public FlipOperation(String operationName, int width, int height) {

@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj.shuffleboard.SendableCameraWrapper;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 
-public abstract class Operation {
+public abstract class Operation<S, D> {
     private MjpegServer server;
     private CvSource source;
 
@@ -35,7 +35,7 @@ public abstract class Operation {
         buildShuffleboardUI();
     }
 
-    public abstract void performOperation(Mat src, Mat dst);
+    public abstract void performOperation(S src, D dst);
     protected abstract void buildShuffleboardUI();
 
     protected void visualize(Mat toVisualize) {

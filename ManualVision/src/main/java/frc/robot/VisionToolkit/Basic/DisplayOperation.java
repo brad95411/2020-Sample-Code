@@ -5,7 +5,7 @@ import org.opencv.core.Mat;
 import edu.wpi.cscore.VideoMode.PixelFormat;
 import frc.robot.VisionToolkit.Operation;
 
-public class DisplayOperation extends Operation {
+public class DisplayOperation extends Operation<Mat, Mat> {
     private static final PixelFormat DEFAULTDISPLAYPIXELFORMAT = PixelFormat.kBGR;
 
     public DisplayOperation(String operationName, int width, int height) {

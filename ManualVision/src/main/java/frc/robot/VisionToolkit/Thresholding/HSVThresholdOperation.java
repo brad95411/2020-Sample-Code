@@ -14,7 +14,7 @@ import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardLayout;
 import frc.robot.VisionToolkit.Operation;
 
-public class HSVThresholdOperation extends Operation {
+public class HSVThresholdOperation extends Operation<Mat, Mat> {
 
     private double hMin;
     private double hMax;

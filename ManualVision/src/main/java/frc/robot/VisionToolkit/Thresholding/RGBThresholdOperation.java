@@ -13,7 +13,7 @@ import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardLayout;
 import frc.robot.VisionToolkit.Operation;
 
-public class RGBThresholdOperation extends Operation {
+public class RGBThresholdOperation extends Operation<Mat, Mat> {
 
     private double redMin;
     private double redMax;

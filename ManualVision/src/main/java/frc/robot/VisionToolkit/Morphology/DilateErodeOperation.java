@@ -13,7 +13,7 @@ import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import frc.robot.VisionToolkit.Operation;
 
-public class DilateErodeOperation extends Operation {
+public class DilateErodeOperation extends Operation<Mat, Mat> {
     private SendableChooser<String> dilateOrErode;
     private SendableChooser<String> elementType;
 

@@ -12,7 +12,7 @@ import edu.wpi.first.networktables.EntryListenerFlags;
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
 import frc.robot.VisionToolkit.Operation;
 
-public class BoxBlurOperation extends Operation {
+public class BoxBlurOperation extends Operation<Mat, Mat> {
 
     private Double blurKernel;
 

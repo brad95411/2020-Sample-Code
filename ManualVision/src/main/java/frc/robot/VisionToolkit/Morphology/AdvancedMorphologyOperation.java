@@ -13,7 +13,7 @@ import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import frc.robot.VisionToolkit.Operation;
 
-public class AdvancedMorphologyOperation extends Operation {
+public class AdvancedMorphologyOperation extends Operation<Mat, Mat> {
     private SendableChooser<String> morphType;
     private SendableChooser<String> elementType;
 
