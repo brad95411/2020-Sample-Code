@@ -44,42 +44,6 @@ public class Debounce {
         }
     }
 
-    public boolean isPressed() {
-        return isPressed(true);
-    }
-
-    public boolean isPressed(boolean triggerUpdate) {
-        if(triggerUpdate) {
-            updateInternal();
-        }
-
-        return !lastValue && currentValue;
-    }
-
-    public boolean isHeld() {
-        return isHeld(true);
-    }
-
-    public boolean isHeld(boolean triggerUpdate) {
-        if(triggerUpdate) {
-            updateInternal();
-        }
-
-        return lastValue && currentValue;
-    }
-
-    public boolean isReleased() {
-        return isReleased(true);
-    }
-
-    public boolean isReleased(boolean triggerUpdate) {
-        if(triggerUpdate) {
-            updateInternal();
-        }
-
-        return lastValue && !currentValue;
-    }
-
     private void updateInternal() {
         lastValue = currentValue;
 
