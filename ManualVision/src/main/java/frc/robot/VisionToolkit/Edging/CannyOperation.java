@@ -14,7 +14,7 @@ import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
 import frc.robot.VisionToolkit.Operation;
 
-public class CannyOperation extends Operation {
+public class CannyOperation extends Operation<Mat, Mat> {
 
     private Double lowThreshold;
 

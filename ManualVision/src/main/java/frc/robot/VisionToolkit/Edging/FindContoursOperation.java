@@ -14,7 +14,7 @@ import org.opencv.imgproc.Imgproc;
 import edu.wpi.cscore.VideoMode.PixelFormat;
 import frc.robot.VisionToolkit.Operation;
 
-public class FindContoursOperation extends Operation {
+public class FindContoursOperation extends Operation<Mat, Mat> {
 
     private List<MatOfPoint> contours;
     private Mat hierarchy;
